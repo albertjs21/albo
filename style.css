@@ -269,7 +269,7 @@ body{
 }
 
 #cont-nipper{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -278,6 +278,7 @@ body{
     justify-content: center;
     top: 0;
     left: 0;
+    z-index: 3;
 }
 #cont-nipper img{
     width: 8rem;
@@ -297,7 +298,43 @@ body{
     margin-top: 4rem;
 }
 
+.but-he{
+    width: 12rem;
+    height: 4rem;
+    background-color: #3743aa;
+    position: absolute;
+    color: #fff;
+    right: 1rem;
+    bottom: 7rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 2;
+}
+.but-he svg{
+    color: #fff !important;
+}
 
+.cach{
+    position: absolute;
+    bottom: 7rem;
+    right: 0;
+}
+.prote{
+    margin: 2rem 0 2rem 4rem;
+    font-size: 15px;
+}
+.prote li{
+    margin-left: 3rem;
+}
+.text-prote{
+    font-weight: bold;
+}
 @media(min-width: 998px){
 
 }
