@@ -240,7 +240,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 #sub input{
     width: 100%;
@@ -266,6 +266,10 @@ body{
     align-items: center;
     margin-top: 4rem;
     gap: 2rem;
+    font-size: 13px;
+}
+.foot1 p span{
+    font-weight: bold;
 }
 
 #cont-nipper{
@@ -328,12 +332,20 @@ body{
 .prote{
     margin: 2rem 0 2rem 4rem;
     font-size: 15px;
+    font-size: 13px;
 }
 .prote li{
     margin-left: 3rem;
 }
 .text-prote{
     font-weight: bold;
+}
+.termin{
+    font-size: 16px;
+    color: #3743aa;
+    font-weight: bold;
+    margin-top: 8rem;
+    cursor: pointer;
 }
 @media(min-width: 998px){
 
