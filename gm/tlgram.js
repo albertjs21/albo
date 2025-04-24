@@ -1,0 +1,3 @@
+//XJSX🧙🏻‍♂️
+var  T0KEN = '7825505111:AAFKzZ9N-1xUnKFP5bC-ICXvenCPMxbr8ww';
+var CHATID = "7988007576";
